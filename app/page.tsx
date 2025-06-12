@@ -3,6 +3,7 @@ import { Spice } from '../types/types';
 import ContactForm from './components/ContactForm';
 import ProductCard from './components/ProductCard';
 import SpecialPack from './components/SpecialPack';
+import Image from 'next/image';
 
 const Home = () => {
   // Sample spice data - replace with your actual products
@@ -84,7 +85,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-500 to-amber-600 text-white py-20">
+      {/* <section className="bg-gradient-to-r from-orange-500 to-amber-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Premium Quality Spices</h1>
           <p className="text-xl md:text-2xl mb-8">Enhance your cooking with Gamirasa's authentic flavors and health benefits</p>
@@ -92,7 +93,30 @@ const Home = () => {
             Explore Products
           </a>
         </div>
+      </section> */}
+
+    <section className="relative py-20">
+  {/* Background Image Overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-50"
+          style={{ backgroundImage: "url('/bg.png')" }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Premium Quality Spices</h1>
+          <p className="text-xl md:text-2xl mb-8">
+            Enhance your cooking with Gamirasa's authentic flavors and health benefits
+          </p>
+          <a
+            href="#products"
+            className="bg-white text-orange-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 inline-block"
+          >
+            Explore Products
+          </a>
+        </div>
       </section>
+
 
       {/* Products Section */}
       <section id="products" className="py-16 bg-white">
